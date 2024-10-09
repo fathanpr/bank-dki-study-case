@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('rekenings', function (Blueprint $table) {
             $table->increments('id_rekening');
             $table->unsignedInteger('pekerjaan_id');
+            $table->string('kode_cabang');
             $table->string('nama')->unique()->regex('/^[a-zA-Z]+$/');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');

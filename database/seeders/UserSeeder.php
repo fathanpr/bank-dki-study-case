@@ -16,15 +16,29 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Customer Service',
-            'email' => 'cs@bank.dki',
+            'name' => 'Customer Service CB1',
+            'email' => 'cs1@bank.dki',
             'password' => Hash::make('12345678'),
             'role' => 'cs',
         ]);
 
         User::create([
-            'name' => 'Supervisi',
-            'email' => 'supervisi@bank.dki',
+            'name' => 'Supervisi CB1',
+            'email' => 'supervisi1@bank.dki',
+            'password' => Hash::make('12345678'),
+            'role' => 'supervisi',
+        ]);
+
+        User::create([
+            'name' => 'Customer Service CB2',
+            'email' => 'cs2@bank.dki',
+            'password' => Hash::make('12345678'),
+            'role' => 'cs',
+        ]);
+
+        User::create([
+            'name' => 'Supervisi CB2',
+            'email' => 'supervisi2@bank.dki',
             'password' => Hash::make('12345678'),
             'role' => 'supervisi',
         ]);

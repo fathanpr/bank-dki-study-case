@@ -14,6 +14,7 @@ class Rekening extends Model
 
     protected $fillable = [
         'nama',
+        'kode_cabang',
         'pekerjaan_id',
         'tempat_lahir',
         'tanggal_lahir',
