@@ -8,6 +8,8 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/js/pages/approval.js.js',
+                'resources/js/pages/pengajuan.js',
             ],
             // refresh: true,
             refresh: ["resources/views/**", "resources/css/**", "app/Http/**"],

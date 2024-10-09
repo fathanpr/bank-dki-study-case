@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $dataPage = [
+            'title' => 'SIPR - Dashboard',
+            'page' => 'dashboard',
+        ];
+        return view('home', $dataPage);
     }
 }

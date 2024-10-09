@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $title)
+
 @section('navbar')
     @include('layouts.navbar')
 @endsection

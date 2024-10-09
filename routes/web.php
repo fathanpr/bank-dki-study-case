@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\PengajuanController;
 
 
 
@@ -16,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/pembukaan-rekening', [PengajuanController::class, 'index'])->name('pembukaan-rekening');
+Route::get('/approval-pembukaan-rekening', [ApprovalController::class, 'index'])->name('approval-pembukaan-rekening');
