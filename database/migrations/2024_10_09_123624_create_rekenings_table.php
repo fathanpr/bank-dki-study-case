@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('kota_id');
             $table->unsignedInteger('kecamatan_id');
             $table->unsignedInteger('kelurahan_id');
-            $table->string('jalan');
+            $table->string('nama_jalan');
             $table->string('rt');
             $table->string('rw');
             $table->integer('nominal_setor');
