@@ -6,6 +6,7 @@ use Throwable;
 use App\Models\Rekening;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ApprovalController extends Controller
@@ -51,7 +52,7 @@ class ApprovalController extends Controller
             $dataFilter['search'] = $search;
         }
 
-        $cabangFilter = auth()->user()->kode_cabang ? auth()->user()->kode_cabang : null;
+        $cabangFilter = Auth::user()->kode_cabang ? Auth::user()->kode_cabang : null;
         if ($cabangFilter) {
             $dataFilter['kode_cabang'] = $cabangFilter;
         }
