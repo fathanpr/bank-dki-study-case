@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             'email' => 'cs1@bank.dki',
             'password' => Hash::make('12345678'),
             'role' => 'cs',
+            'kode_cabang' => 'CB1'
         ]);
 
         User::create([
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
             'email' => 'supervisi1@bank.dki',
             'password' => Hash::make('12345678'),
             'role' => 'supervisi',
+            'kode_cabang' => 'CB1'
         ]);
 
         User::create([
@@ -34,6 +36,7 @@ class UserSeeder extends Seeder
             'email' => 'cs2@bank.dki',
             'password' => Hash::make('12345678'),
             'role' => 'cs',
+            'kode_cabang' => 'CB2'
         ]);
 
         User::create([
@@ -41,6 +44,7 @@ class UserSeeder extends Seeder
             'email' => 'supervisi2@bank.dki',
             'password' => Hash::make('12345678'),
             'role' => 'supervisi',
+            'kode_cabang' => 'CB2'
         ]);
     }
 }

@@ -130,8 +130,18 @@ class KelurahanSeeder extends Seeder
         ]);
 
         Kelurahan::create([
-            'nama_kelurahan' => 'Kel. Walantaka',
+            'nama_kelurahan' => 'Kel. Serang Kidul',
             'kecamatan_id' => 11,
+        ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Kel. Walantaka',
+            'kecamatan_id' => 12,
+        ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Kel. Tegalsari',
+            'kecamatan_id' => 12,
         ]);
     }
 }

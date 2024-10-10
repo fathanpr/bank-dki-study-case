@@ -15,4 +15,22 @@ class Pekerjaan extends Model
     protected $fillable = [
         'nama_pekerjaan',
     ];
+
+    public static function getData($dataFilter)
+    {
+        $data = self::select(
+            'id_pekerjaan',
+            'nama_pekerjaan',
+        );
+
+        if (isset($dataFilter['search'])) {
+            $search = $dataFilter['search'];
+            $data->where(function ($query) use ($search) {
+                $query->where('nama_pekerjaan', 'ILIKE', "%{$search}%");
+            });
+        }
+
+        $result = $data;
+        return $result;
+    }
 }

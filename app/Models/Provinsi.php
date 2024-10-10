@@ -15,4 +15,22 @@ class Provinsi extends Model
     protected $fillable = [
         'nama_provinsi',
     ];
+
+    public static function getData($dataFilter)
+    {
+        $data = self::select(
+            'id_provinsi',
+            'nama_provinsi',
+        );
+
+        if (isset($dataFilter['search'])) {
+            $search = $dataFilter['search'];
+            $data->where(function ($query) use ($search) {
+                $query->where('nama_provinsi', 'ILIKE', "%{$search}%");
+            });
+        }
+
+        $result = $data;
+        return $result;
+    }
 }
