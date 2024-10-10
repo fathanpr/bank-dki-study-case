@@ -58,7 +58,7 @@ class PengajuanController extends Controller
         $rt = $request->rt;
         $rw = $request->rw;
         $nominal_setor = $request->nominal_setor;
-        $kode_cabang = auth()->user()->kode_cabang;
+        $kode_cabang = Auth::user()->kode_cabang;
 
 
         DB::beginTransaction();

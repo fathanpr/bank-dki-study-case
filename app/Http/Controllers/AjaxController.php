@@ -38,12 +38,12 @@ class AjaxController extends Controller
             ];
         }
 
-        $results = array(
+        $results = [
             "results" => $dataProvinsi,
-            "pagination" => array(
+            "pagination" => [
                 "more" => $morePages
-            )
-        );
+            ]
+        ];
 
         return response()->json($results, 200);
     }
@@ -81,12 +81,12 @@ class AjaxController extends Controller
             ];
         }
 
-        $results = array(
+        $results = [
             "results" => $dataKota,
-            "pagination" => array(
+            "pagination" => [
                 "more" => $morePages
-            )
-        );
+            ]
+        ];
 
         return response()->json($results, 200);
     }
@@ -124,12 +124,12 @@ class AjaxController extends Controller
             ];
         }
 
-        $results = array(
+        $results = [            
             "results" => $dataKecamatan,
-            "pagination" => array(
+            "pagination" => [
                 "more" => $morePages
-            )
-        );
+            ]
+        ];
 
         return response()->json($results, 200);
     }
@@ -167,12 +167,12 @@ class AjaxController extends Controller
             ];
         }
 
-        $results = array(
+        $results = [
             "results" => $dataKelurahan,
-            "pagination" => array(
+            "pagination" => [
                 "more" => $morePages
-            )
-        );
+            ]
+        ];
 
         return response()->json($results, 200);
     }
@@ -204,12 +204,12 @@ class AjaxController extends Controller
             ];
         }
 
-        $results = array(
+        $results = [
             "results" => $dataPekerjaan,
-            "pagination" => array(
+            "pagination" => [
                 "more" => $morePages
-            )
-        );
+            ]
+        ];
 
         return response()->json($results, 200);
     }

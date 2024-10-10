@@ -22,14 +22,14 @@ class ApprovalController extends Controller
 
     public function datatable(Request $request)
     {
-        $columns = array(
+        $columns = [
             0 => 'nama',
             1 => 'pekerjaans.nama_pekerjaan',
             2 => 'tempat_lahir',
             3 => 'tanggal_lahir',
             5 => 'nominal_setor',
             6 => 'status_approval',
-        );
+        ];
 
         $totalData = Rekening::count();
         $totalFiltered = $totalData;
@@ -64,7 +64,7 @@ class ApprovalController extends Controller
         if (!empty($rekenings)) {
             foreach ($rekenings as $data) {
 
-                $role = auth()->user()->role;
+                $role = Auth::user()->role;
                 $canApprove = $data->status_approval == 'Menunggu Approval' && $role == 'supervisi' ? true : false;
 
                 $nestedData['nama'] = $data->nama;
@@ -80,7 +80,7 @@ class ApprovalController extends Controller
             }
         }
 
-        $json_data = array(
+        $json_data = [
             "draw" => intval($request->input('draw')),
             "recordsTotal" => intval($totalData),
             "recordsFiltered" => intval($totalFiltered),
@@ -88,7 +88,7 @@ class ApprovalController extends Controller
             "order" => $order,
             "dir" => $dir,
             "column" => $request->input('order.0.column')
-        );
+        ];
 
         return response()->json($json_data, 200);
     }
