@@ -9,16 +9,26 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        {{ __('You are logged in!') }}
+                        <div class="table-responsive">
+                            <table id="rekening-table" class="table table-striped table-bordered display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <th>Pekerjaan</th>
+                                        <th>Tempat Lahir</th>
+                                        <th>Tanggal Lahir</th>
+                                        <th>Alamat</th>
+                                        <th>Nominal Setor</th>
+                                        <th>Status Approval</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

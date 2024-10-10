@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjaxController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\PengajuanController;
 
@@ -31,9 +30,15 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     //Pengajuan Pembukaan Rekening
-    Route::get('/pembukaan-rekening', [PengajuanController::class, 'index'])->name('pembukaan-rekening');
-    Route::post('/pembukaan-rekening/store', [PengajuanController::class, 'store'])->name('pembukaan-rekening.store');
+    Route::group(['prefix' => 'pembukaan-rekening'], function () {
+        Route::get('/', [PengajuanController::class, 'index'])->name('pembukaan-rekening');
+        Route::post('/store', [PengajuanController::class, 'store'])->name('pembukaan-rekening.store');
+    });
 
     //Approval Pembukaan Rekening
-    Route::get('/approval-pembukaan-rekening', [ApprovalController::class, 'index'])->name('approval-pembukaan-rekening');
+    Route::group(['prefix' => 'approval-pembukaan-rekening'], function () {
+        Route::get('/', [ApprovalController::class, 'index'])->name('approval-pembukaan-rekening');
+        Route::post('/datatable', [ApprovalController::class, 'datatable'])->name('approval-pembukaan-rekening.datatable');
+        Route::post('/approve', [ApprovalController::class, 'approve'])->name('approval-pembukaan-rekening.approve');
+    });
 });

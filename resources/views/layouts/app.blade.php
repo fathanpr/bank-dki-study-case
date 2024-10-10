@@ -23,7 +23,7 @@
     @endif
 
     @if ($page == 'approval-pembukaan-rekening')
-        @vite(['resources/js/pages/approval_pembukaan_rekening.js'])
+        @vite(['resources/js/pages/approval.js'])
     @endif
 </body>
 
