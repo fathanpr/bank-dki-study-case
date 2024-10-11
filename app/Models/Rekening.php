@@ -29,6 +29,10 @@ class Rekening extends Model
         'status_approval',
     ];
 
+    protected $dates = [
+        'tanggal_lahir',
+    ];
+
     private static function _query($dataFilter)
     {
         $data = self::select(
